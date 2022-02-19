@@ -1,0 +1,53 @@
+
+import random
+import discord
+from discord.ext import commands 
+import youtube_dl
+import os
+
+TOKEN = 'ODk3NDE5MjE0MDIzOTY2NzQx.YWVYxQ.O94xa-CG-oE1vo7UYsKZUaRWmi0'
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    print('we have logged in as {0.user}'.format(client))
+
+@client.event
+async def on_message(message):
+    username = str(message.author).split('#')[0]
+    user_message = str(message.content)
+    channel = str(message.channel.name)
+    print(f'{username}: {user_message} ({channel})')
+
+    if message.author == client.user:
+        return
+    
+    if message.channel.name =='not-so-secret-inn':
+        if user_message.lower() =='googas':
+            await message.channel.send(f'shut the fuck up {username}')
+            return
+        elif user_message.lower() =='bruh':
+            await message.channel.send(f'moment')
+            return
+        elif user_message.lower() ==':sob:':
+            await message.channel.send(f'UOOHHHH EROTIC :sob: :sob: {username}')
+            return
+        elif user_message.lower() == 'cunny':
+            await message.channel.send(f'https://tenor.com/view/cunny-gif-20668002')
+            return
+        elif user_message.lower() == '<:googas:841607836034400286>':
+            await message.channel.send(f'<:googas:841607836034400286>')
+            return
+        elif user_message.lower() == '*random':
+            response = f'this is the random number: {random.randrange(1000)}'
+            await message.channel.send(response)
+            return
+        elif user_message.lower() == 'arda':
+              await message.channel.send(f'https://tenor.com/view/oc-arda-gif-20873736')
+              return
+        elif user_message.lower() =='efe':
+            await message.channel.send(f'https://tenor.com/view/mal-efe-efe-mal-efe-ne-mal-adams%C4%B1n-gif-18905743')
+            return
+
+client.run(TOKEN)

@@ -1,1 +1,63 @@
 
+print("ilk yazı bazlı macera oyunuma hoşgeldiniz")
+name=input("isminiz nedir?")
+yas=int(input("yaşınız nedir?"))
+
+can = 50
+
+if yas >=12:
+    print ("merhaba" ,name, "oynamak için gereken yaşın üzerindesiniz")
+
+    oyun=input("oyuna başlamak ister misiniz?").lower()
+    if oyun=="evet":
+        print("iyi eğlenceler!")
+        print("oyuna", can, "can ile başlıyorsunuz")
+        cvp = input("kendini bir ormanın ortasında kendini bayılmış bir şekilde buluyorsun ve hafızan iyi durumda değil, en son odanda ders çalıştığını hatırlıyorsun...etrafı incele/yardım iste?")
+
+        if cvp == "etrafı incele":
+            cvp2 =input("etrafı incelerken yakınlarda büyük bir göl buluyorsunuz ve devam etmeye karar veriyorsunuz (yüz/etrafından dolas)")
+            if cvp2=="yüz":
+                can-=10
+                print("yüzerken zorlandın ve balıklar tarafından ısırıldın!")
+                print("10 can kaybettin",can, "canınız kaldı")
+            elif cvp2=="etrafından dolas": 
+                print("x") 
+        elif cvp == "yardım iste":
+            cvp3= input("yardım çıglıkları attın ve bir ayının dikkatini çektin..(kac/savas)")
+            if cvp3=="savas":
+                print("pek iyi bir fikir değildi, 50 can kaybettiniz!")
+                can-=50
+            elif cvp3=="kac":
+                can-=25
+                print("kacmayı bir sekilde basardınız ama kacarken yaralandınız ve 25 can kaybettiniz.",can, "canınız kaldı.")
+                cvp4=input("kötü bir yaranız var fakat ilerde ilginç bir zil sesi duyuyorsunuz.(sese git/yarayı tedavi et)")
+                if cvp4=="yarayı tedavi et":
+                    can+=5
+                    print("daha iyi hissediyorsunuz artık" ,can, "canınız var" )
+                    cvp6=input("hava kararmaya başladı fakat zilin sesi korkutucu bir şekilde artmaya başladı")
+                     
+                if cvp4=="sese git":
+                    can-=15
+                    print("sese gitmeye çalıştınız fakat ne kadar yürüseniz de ulaşamadınız, yaranız daha da kötü duruma geldi. 15 can kaybettiniz",can,"canınız kaldı.")
+                    cvp5=input("karanlık olmaya başladı ve yaralısınız. (yarayı tedavi et/kurulmaya başla)")
+                    if cvp5=="yarayı tedavi et":
+                        can+=5
+                        print("yarayı sardınız ve biraz daha iyi hissediyorsunuz. 5 can kazandınız.",can,"canınız kaldı")
+                
+            if can<=0: print("canınız kalmadı ve oyunu kaybettiniz oynadığın için teşekkür ederim",name,"!")
+
+                   
+
+        
+            
+
+
+
+
+            
+            
+
+    else:print("başka zaman görüşmek üzere..") 
+        
+else:print("yaşınız oyunu oynamak için çok küçük") 
+    

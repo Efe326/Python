@@ -1,0 +1,68 @@
+from tkinter import *
+from tkinter import ttk
+import time
+import os
+from tkinter import messagebox
+
+root = Tk()
+root.title("Alarm Saati")
+def SubmitButton():
+  AlarmTime= entry1.get()
+  Message1()
+
+ #alarm saati gece 3 için 03:MM gibi olmalı eğer 3:MM girerseniz çöküyor.
+  
+  CurrentTime = time.strftime("%H:%M")
+  print("Alarm saati: {}".format(AlarmTime))
+  
+  while AlarmTime != CurrentTime:
+    
+    CurrentTime = time.strftime("%H:%M")
+    time.sleep(1)
+
+    #alarm müziği aynı directory içinde olmalı yoksa hata alıyorsunuz.
+
+  if AlarmTime == CurrentTime:
+     print("Alarm Çalmakta")
+     os.system("start alarm-müziği.mp3")
+     label2.config(text = "Alarm Çalıyor.....")
+     messagebox.showinfo(title= 'Alarm mesajı', message= "{}".format(entry2.get()))
+def Message1():
+    AlarmTimeLable= entry1.get()
+    label2.config(text="Alarm sayıyor...")
+   
+    messagebox.showinfo(title = 'Alarm Saati', message = 'Alarmın çalacağı vakit: {}'.format(AlarmTimeLable))     
+frame1 = ttk.Frame(root)
+frame1.pack()
+frame1.config(height = 100, width = 100)
+
+#oluşacak pencerenin boyutları
+
+label1= ttk.Label(frame1,text = "alarm saatini giriniz :")
+label1.pack()
+
+
+entry1 = ttk.Entry(frame1, width = 35)
+entry1.pack()
+entry1.insert(3,"örnek: 15:15")
+
+labelAlarmMessage= ttk.Label(frame1, text="Alarm Mesajı:")
+labelAlarmMessage.pack()
+
+entry2= ttk.Entry(frame1, width=35)
+entry2.pack()
+
+#oluşacak text boxların boyutları 
+
+button1= ttk.Button(frame1, text= "ayarla", command=SubmitButton)
+button1.pack()
+
+#label 2 son alarmı gösterecek
+
+label2= ttk.Label(frame1)
+label2.pack()
+
+    
+
+
+root.mainloop()  

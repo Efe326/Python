@@ -1,0 +1,49 @@
+def Topla(x, y):
+    return x + y
+
+
+def FarkAl(x, y):
+    return x - y
+
+
+def Carp(x, y):
+    return x * y
+
+
+def Bol(x, y):
+    return x / y
+
+
+while True:
+    print("1- Toplama")
+    print("2- Çıkarma")
+    print("3- Çarpma")
+    print("4- Bölme")
+    print("0- Çıkış")
+
+    secim = input("Yapmak istediğiniz işlemi seçin: ")
+
+    if secim == "0":
+        print("Program sonlandırıldı.")
+        break
+
+    sayi1 = float(input("Birinci sayıyı girin: "))
+    sayi2 = float(input("İkinci sayıyı girin: "))
+
+    if secim == "1":
+        sonuc = Topla(sayi1, sayi2)
+        print("Toplam:", sonuc)
+    elif secim == "2":
+        sonuc = FarkAl(sayi1, sayi2)
+        print("Fark:", sonuc)
+    elif secim == "3":
+        sonuc = Carp(sayi1, sayi2)
+        print("Çarpım:", sonuc)
+    elif secim == "4":
+        if sayi2 == 0:
+            print("Bir sayı sıfıra bölünemez!")
+        else:
+            sonuc = Bol(sayi1, sayi2)
+            print("Bölüm:", sonuc)
+    else:
+        print("Bir hata oluştu yaw, Lütfen tekrar deneyin.")

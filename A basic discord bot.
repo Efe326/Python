@@ -33,9 +33,6 @@ async def on_message(message):
         elif user_message.lower() ==':sob:':
             await message.channel.send(f'UOOHHHH EROTIC :sob: :sob: {username}')
             return
-        elif user_message.lower() == 'cunny':
-            await message.channel.send(f'https://tenor.com/view/cunny-gif-20668002')
-            return
         elif user_message.lower() == '<:googas:841607836034400286>':
             await message.channel.send(f'<:googas:841607836034400286>')
             return
